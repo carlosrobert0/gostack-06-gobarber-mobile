@@ -60,10 +60,10 @@ const CreateAppointment: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    api.get(`providers/${selectedDate}/day-availability`, {
+    api.get(`/providers/${routeParams.providerId}/day-availability`, {
       params: {
         year: selectedDate.getFullYear(),
-        month: selectedDate.getMonth(),
+        month: selectedDate.getMonth() + 1,
         day: selectedDate.getDate(),
       }
     }).then(response => {
@@ -95,7 +95,7 @@ const CreateAppointment: React.FC = () => {
 
   const morningAvailability = useMemo(() => {
     return availability
-      .filter(({ hour }) => hour < 12)
+    .filter(({ hour, available }) => hour < 12 && available)
       .map(({ hour, available }) => {
         return {
           hour,
@@ -107,7 +107,7 @@ const CreateAppointment: React.FC = () => {
 
   const afternoonAvailability = useMemo(() => {
     return availability
-      .filter(({ hour }) => hour >= 12)
+      .filter(({ hour, available }) => hour >= 12 && available)
       .map(({ hour, available }) => {
         return {
           hour,
@@ -119,6 +119,7 @@ const CreateAppointment: React.FC = () => {
 
   return (
     <Container>
+      {console.log('provider', selectedProvider)}
       <Header>
         <BackButton onPress={navigateBack} >
           <Icon name="chevron-left" size={24} color="#999591" />
@@ -160,17 +161,18 @@ const CreateAppointment: React.FC = () => {
             mode="date"
             display="calendar"
             onChange={handleDateChanged}
-            textColor="#f4ede8"
             value={selectedDate}
           />
         )}
       </Calendar>
 
-      {morningAvailability.map(({ hourFormatted }) => (
+      {morningAvailability
+        .map(({ hourFormatted }) => (
         <Title key={hourFormatted}>{hourFormatted}</Title>
       ))}
 
-      {afternoonAvailability.map(({ hourFormatted }) => (
+      {afternoonAvailability
+        .map(({ hourFormatted }) => (
         <Title key={hourFormatted}>{hourFormatted}</Title>
       ))}
 

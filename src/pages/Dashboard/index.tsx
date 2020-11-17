@@ -7,7 +7,6 @@ import api from '../../services/api';
 
 import {
   Container,
-  Header,
   HeaderTitle,
   UserName,
   ProfileButton,
@@ -21,6 +20,7 @@ import {
   ProviderMeta,
   ProviderMetaText,
 } from './styles';
+import Header from '../../components/Header';
 
 export interface Provider {
   id: string;
@@ -52,17 +52,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <Container>
-      <Header>
-        <HeaderTitle>
-          Bem vindo, {'\n'}
-          <UserName>{user.name}</UserName>
-        </HeaderTitle>
-
-        <ProfileButton onPress={navigateToProfile}>
-          <UserAvatar source={{ uri: user.avatar_url }} />
-        </ProfileButton>
-      </Header>
-
+      <Header />
       <ProvidersList
         data={providers}
         keyExtractor={(provider) => provider.id}

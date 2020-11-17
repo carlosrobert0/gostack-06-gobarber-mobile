@@ -114,6 +114,8 @@ const SignUp: React.FC = () => {
               <Input
                 ref={emailInputRef}
                 keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
                 name="email"
                 icon="mail"
                 placeholder="E-mail"

@@ -101,12 +101,12 @@ const SignIn: React.FC = () => {
 
             <Form style={{ width: '100%'}} ref={formRef} onSubmit={handleSignIn}>
               <Input
-                autoCorrect={false}
-                autoCapitalize="none"
-                keyboardType="email-address"
                 name="email"
                 icon="mail"
                 placeholder="E-mail"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
                 returnKeyType="next"
                 onSubmitEditing={() => {
                   passwordInputRef.current?.focus()
