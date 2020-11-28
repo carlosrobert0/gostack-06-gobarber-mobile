@@ -1,33 +1,52 @@
-<h1 align="center">Welcome to App GoBarber 👋</h1>
+<h1 align="center">Bem vindo ao App GoBarber 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
 > App Mobile GoBarber, AgenDuCorte
+> Aplicativo da aplicação GoBarber, Neste aplicativo os usuarios serao, de inicio, os clientes
+> Os clientes que queiram e vao usar neste caso, serviços de barbearias diversas disponiveis na aplicação
+
+## git clone
+
+```sh
+git clone https://github.com/carlosrobert0/gostack-06-gobarber-mobile.git
+acessando projeto
+
+```
+
+## Accessing project
+
+```sh
+cd gostack-06-gobarber-mobile
+
+```
 
 ## Install
 
 ```sh
 yarn install
+para instalar todas as dependencias do projeto
 ```
 
 ## Usage
 
 ```sh
 yarn android
+or 
+yarn ios
 ```
 
 ## Run tests
 
 ```sh
-yarn run test
+yarn test
 ```
 
 ## Author
 
 👤 **Carlos Roberto with RocketSeat**
 
-* Website: https://www.linkedin.com/in/carlos-roberto-dos-reis-neto-51b84a120/
 * Github: [@carlosrobert0](https://github.com/carlosrobert0)
 * LinkedIn: [@https:\/\/www.linkedin.com\/in\/carlos-roberto-dos-reis-neto-51b84a120\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/carlos-roberto-dos-reis-neto-51b84a120\/)
 
